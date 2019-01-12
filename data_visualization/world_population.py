@@ -6,14 +6,14 @@ filename = 'population_data.json'
 with open(filename) as f:
 	pop_data = json.load(f)
 #print 2010 population of each country
-cc_population = {}
+cc_population = {} #a dictionary to hold country_code - population
 for data_row in pop_data:
 	if(data_row['Year'] == '2010'):
 		country_name = data_row['Country Name']
 		#we need to convert string into float first
 		#after that int() function can remove decimal
-		population = int(float(data_row['Value']))
 		country_code = get_country_code(country_name)
+		population = int(float(data_row['Value']))
 		if country_code:
 			cc_population[country_code] = population
 			print(country_code + ": "+str(population))
