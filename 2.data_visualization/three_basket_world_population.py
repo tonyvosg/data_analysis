@@ -1,6 +1,7 @@
 import json
 from appscript import *
 from pygal.maps.world import World
+from pygal.style import LightColorizedStyle as LCS, RotateStyle as RS
 from countries import get_country_code
 filename = 'population_data.json'
 filename_output = "three_basket_world_population"
@@ -24,12 +25,13 @@ for data_row in pop_data:
 		else:
 			print("ERROR - No Country Code Found "+ country_name)
 		#print(country_name + " : " + str(population))
-wm = World()
+style_obj = RS('#0000FF', base_style = LCS) #return an object of style
+wm = World(style = style_obj)
 wm.title = 'World Population 2020 by Country'
 wm.add('0-10m', cc_pop1, c="blue")
 wm.add('10m-1b', cc_pop2, c="yellow")
 wm.add('>1b', cc_pop3, c="red")
-wm.render_to_file("three_basket_world_population.svg")
+wm.render_to_file("three_basket_world_population_new_style.svg")
 #open pygal file with Safari
 safari = app("Safari")
-safari.make(new = k.document, with_properties={k.URL:"file:///Users/tungvo/Desktop/Portfolio/data_analysis/three_basket_world_population.svg"})
+safari.make(new = k.document, with_properties={k.URL:"file:///Users/tungvo/Desktop/Portfolio/data_visualization/three_basket_world_population_new_style.svg"})
