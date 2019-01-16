@@ -1,0 +1,3 @@
+#define an URL pattern
+#write a view
+#create an template

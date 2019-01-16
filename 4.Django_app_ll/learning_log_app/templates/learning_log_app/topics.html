@@ -1,0 +1,10 @@
+{% extends 'learning_log_app/base.html' %}
+{% block content %}
+<ul>	
+	{% for topic in topics %}
+		<li>  <a href = url 'learning_log_app:topic' topic.id> {{topic}} </a>  </li>
+	{%empty%}
+		<li> No topics have been added yet. </li>
+	{%endfor%}
+</ul>
+{% endblock content %}
