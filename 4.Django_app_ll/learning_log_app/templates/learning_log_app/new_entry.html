@@ -1,0 +1,11 @@
+{%extends "learning_log_app/base.html"%}
+{%block content %}
+<!-- a link to the mainpage of a topic -->
+<p> <a href="%url 'learning_log_app:topic topic.id"> {{topic}} </p>
+<p> Add a new entry : </p>
+<form action = "{%url 'learning_log_app:new_entry' topic.id %}" method='post'> <!-- include topic id to associate new entry with correct topic -->
+{%csrf_token%}
+{{form.as_p}}
+<button name = 'submit'> Add Entry </button>
+</form>
+{%endblock content%}

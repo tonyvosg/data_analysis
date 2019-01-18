@@ -1,0 +1,4 @@
+- Nắm vững một ngôn ngữ lập trình (ưu tiên Python)
+- Nắm vững về cấu trúc dữ liệu và giải thuật
+- Có kinh nghiệm làm việc với một trong các framework về Machine Learning như scikit-learn, tensorflow/keras, MLib ... (optional)
+- Có kinh nghiệm làm việc trong dự án thực tế về Machine Learning (optional)
